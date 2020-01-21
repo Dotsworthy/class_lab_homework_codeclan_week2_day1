@@ -29,10 +29,11 @@ class Team
   end
 
   def find_player(name)
-    for player in @players
-      return true if name == player
-    end
-    return false
+    # for player in @players
+    #   return true if name == player
+    # end
+    # return false
+    return @players.include?(name)
   end
 
   def points(result)
