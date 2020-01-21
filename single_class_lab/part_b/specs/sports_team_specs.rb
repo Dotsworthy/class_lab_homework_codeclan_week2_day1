@@ -8,7 +8,7 @@ class TestTeam < MiniTest::Test
     @team01 = Team.new("Newcastle United",["Miguel Almiron", "Jamaal Lascelles", "Allan Saint-Maxamin"], "Steve Bruce", 0)
   end
 
-  def test_team_name
+  def test_get_team_name
     assert_equal("Newcastle United", @team01.team_name)
   end
 
@@ -20,11 +20,27 @@ class TestTeam < MiniTest::Test
     assert_equal("Steve Bruce", @team01.coach)
   end
 
+  def test_set_coach
+    @team01.coach = "Rafa Benitez"
+    assert_equal("Rafa Benitez", @team01.coach)
+  end
+
   def test_add_player
+    # @team01.push("Martin Dubravka")
     assert_equal("Martin Dubravka", @team01.add_player("Martin Dubravka").last)
+    # assert_equal("Martin Dubravka", @team01.push("Martin Dubravka").last)
+  end
+
+  def test_find_player_true
+    assert_equal(true, @team01.find_player("Miguel Almiron"))
+  end
+
+  def test_find_player_false
+    assert_equal(false, @team01.find_player("Billy Sharp"))
   end
 
   def test_add_points
     assert_equal(3, @team01.points("win"))
   end
+
 end

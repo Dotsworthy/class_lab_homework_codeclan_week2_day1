@@ -5,11 +5,11 @@ class Student
     @planguage = planguage
   end
 
-  def find_name()
+  def get_name()
     return @name
   end
 
-  def find_cohort()
+  def get_cohort()
     return @cohort
   end
 

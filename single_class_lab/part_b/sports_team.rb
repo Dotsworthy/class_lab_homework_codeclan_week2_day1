@@ -1,12 +1,15 @@
 class Team
-  attr_reader :team_name, :players, :coach
+  attr_reader :team_name, :players
+  attr_accessor :coach
 
-  def initialize (team_name, players, coach, points)
+  def initialize(team_name, players, coach, points)
     @team_name = team_name
     @players = players
     @coach = coach
     @points = points
   end
+
+  # the below have been commented out as the attr_reader does this instead
 
   # def get_name
   #     return @team_name
@@ -22,6 +25,13 @@ class Team
 
   def add_player(name)
     @players.push(name)
+  end
+
+  def find_player(name)
+    for player in @players
+      return true if name == player
+    end
+    return false
   end
 
   def points(result)
