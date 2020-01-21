@@ -39,11 +39,8 @@ class TestTeam < MiniTest::Test
     assert_equal(false, @team01.find_player("Billy Sharp"))
   end
 
-  def test_add_points_true
+  def test_add_points
     assert_equal(3, @team01.points("win"))
   end
-
-  def test_add_points_false
-    assert_equal(3, @team01.points("loss"))
 
 end
