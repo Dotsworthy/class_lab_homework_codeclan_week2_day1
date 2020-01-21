@@ -1,12 +1,13 @@
 class Team
   attr_reader :team_name, :players
-  attr_accessor :coach
+  attr_accessor :coach, :points
 
-  def initialize(team_name, players, coach, points)
+  def initialize(team_name, players, coach)
     @team_name = team_name
     @players = players
     @coach = coach
-    @points = points
+    @points = 0
+    # points is not a parameter because we begin every team with 0 points!
   end
 
   # the below have been commented out as the attr_reader does this instead

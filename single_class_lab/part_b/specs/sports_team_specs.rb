@@ -5,7 +5,7 @@ Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
 class TestTeam < MiniTest::Test
   def setup
-    @team01 = Team.new("Newcastle United",["Miguel Almiron", "Jamaal Lascelles", "Allan Saint-Maxamin"], "Steve Bruce", 0)
+    @team01 = Team.new("Newcastle United",["Miguel Almiron", "Jamaal Lascelles", "Allan Saint-Maxamin"], "Steve Bruce")
   end
 
   def test_get_team_name
@@ -39,8 +39,11 @@ class TestTeam < MiniTest::Test
     assert_equal(false, @team01.find_player("Billy Sharp"))
   end
 
-  def test_add_points
+  def test_add_points_true
     assert_equal(3, @team01.points("win"))
   end
+
+  def test_add_points_false
+    assert_equal(3, @team01.points("loss"))
 
 end
